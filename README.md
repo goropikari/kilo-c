@@ -11,3 +11,12 @@ The `kilo` was originally written by Salvatore Sanfilippo, and released under th
 ssize_t read(int fd, void *buf, size_t count);
 ```
 https://www.man7.org/linux/man-pages/man2/read.2.html
+
+
+```c
+#include <termios.h>
+int tcgetattr(int fd, struct termios *termios_p);
+```
+https://man7.org/linux/man-pages/man3/termios.3.html
+
+c
