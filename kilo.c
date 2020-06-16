@@ -47,6 +47,11 @@ char editorReadKey() {
     return c;
 }
 
+/* output */
+void editorRefreshScreen() {
+    write(STDOUT_FILENO, "\x1b[2J", 4);
+}
+
 /* input */
 void editorProcessKeypress() {
     char c = editorReadKey();
@@ -63,15 +68,7 @@ int main() {
     enableRawMode();
 
     while (1) {
-        // char c = '\0';
-        // // EAGAIN condition is for Cygwin
-        // if (read(STDIN_FILENO, &c, 1) == -1 && errno != EAGAIN) die("read");
-        // if (iscntrl(c)) {
-        //     printf("%d\r\n", c);
-        // } else {
-        //     printf("%d ('%c')\r\n", c, c);
-        // }
-        // if (c == CTRL_KEY('q')) break;
+        editorRefreshScreen();
         editorProcessKeypress();
     }
 
