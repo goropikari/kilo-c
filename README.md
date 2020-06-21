@@ -2,7 +2,16 @@ I write a text editor by following [Build Your Own Text Editor](https://viewsour
 
 The `kilo` was originally written by Salvatore Sanfilippo, and released under the BSD 2-clause license ([LICENSE](./LICENSE))
 
-# Chapter 2: Entering raw mode
+
+# Docker
+```
+git clone --depth 1 https://github.com/goropikari/kilo-c.git
+docker build -t kilo .
+dokcer run --rm -it kilo
+```
+
+# Note
+## Chapter 2: Entering raw mode
 `STDIN_FILENO` is the file discriptor related to standard input.
 
 `read(2)`
@@ -18,5 +27,3 @@ https://www.man7.org/linux/man-pages/man2/read.2.html
 int tcgetattr(int fd, struct termios *termios_p);
 ```
 https://man7.org/linux/man-pages/man3/termios.3.html
-
-c
